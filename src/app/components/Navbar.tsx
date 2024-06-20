@@ -9,7 +9,7 @@ function Navbar() {
       </div>
       <ul className="flex gap-10">
         <li>Urunler</li>
-        <li>Biz Kimiz?</li>
+        <li>Biz Kimiz</li>
         <li>Bagis Kulturu</li>
         <li>Regl Testi! </li>
         <li>Kendi Paketini Olustur</li>
