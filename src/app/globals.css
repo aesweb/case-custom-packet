@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    @apply bg-[#F9F5F2];
-  }
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+body {
+  background-color: #f9f5f2;
 }

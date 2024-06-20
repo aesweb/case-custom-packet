@@ -1,3 +1,6 @@
+'use client';
+import TabsComponent from './TabsComponent';
+
 const CustomCard = () => {
   return (
     <div className="flex items-center flex-col gap-20">
@@ -11,7 +14,7 @@ const CustomCard = () => {
           miktarlardan, sana özel bir paket oluşturalım.
         </div>
       </div>
-      <div>tabs</div>
+      <TabsComponent />
     </div>
   );
 };
