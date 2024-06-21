@@ -20,7 +20,7 @@ export default function Card() {
   };
 
   return (
-    <div className="flex flex-col p-8 gap-8 rounded-xl bg-white items-start w-[466px]">
+    <div className="flex flex-col gap-8 p-8 rounded-xl bg-white w-[466px]">
       <span className="text-2xl font-medium">Özel Paketin</span>
       <div className="flex p-3 rounded-lg bg-[#FEFEFE] w-full gap-2 shadow-lg">
         <img src="repeat.svg" alt="" />2 ayda 1 gönderim
