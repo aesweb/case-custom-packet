@@ -1,24 +1,25 @@
 'use client';
 
 import { Slider } from '@nextui-org/react';
-import { usePackage } from '../context/PackageContext';
 
 interface CustomSliderProps {
   label: string;
   maxValue: number;
   marks: { value: number; label: string }[];
+  onChange: (value: number) => void;
+  value: number;
 }
 
 export default function CustomSlider({
   label,
   maxValue,
   marks,
+  onChange,
+  value,
 }: CustomSliderProps) {
-  const { selectedProducts, setSelectedProducts } = usePackage();
-
-  const handleChange = (value: number | number[]) => {
-    if (typeof value === 'number') {
-      setSelectedProducts((prev) => ({ ...prev, [label]: value }));
+  const handleChange = (newValue: number | number[]) => {
+    if (typeof newValue === 'number') {
+      onChange(newValue);
     }
   };
 
@@ -33,10 +34,9 @@ export default function CustomSlider({
       getValue={(value) => `${value}`}
       minValue={0}
       marks={marks}
-      defaultValue={0}
-      className="max-w-md"
+      value={value}
       onChange={handleChange}
-      value={selectedProducts[label] || 0}
+      className="max-w-md"
     />
   );
 }
