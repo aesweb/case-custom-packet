@@ -1,15 +1,23 @@
 'use client';
 
+import { Button } from '@nextui-org/button';
 import { usePackage } from '../context/PackageContext';
 
 export default function Card() {
-  const { tabProducts } = usePackage();
+  const { tabProducts, setTabProducts } = usePackage();
 
   const allProducts = Object.values(tabProducts).flat();
   const totalPrice = allProducts.reduce(
     (total, product) => total + product.count * 5,
     0
   ); // Örnek fiyatlandırma
+
+  const removeProduct = (tabName: string) => {
+    setTabProducts((prev) => ({
+      ...prev,
+      [tabName]: prev[tabName].map((product) => ({ ...product, count: 0 })),
+    }));
+  };
 
   return (
     <div className="flex flex-col p-8 gap-8 rounded-xl bg-white items-start w-[466px]">
@@ -20,25 +28,40 @@ export default function Card() {
 
       <img src="packet.webp" alt="" />
 
-      <div className="flex flex-col gap-2 text-sm rounded-lg bg-[#FEFEFE] shadow-lg w-full items-start p-6">
-        <span>Ped Paketleri</span>
-        {Object.entries(tabProducts).map(([tab, products]) => (
-          <div key={tab}>
-            <h3>{tab}</h3>
-            {products.map((product) => (
-              <div
-                key={product.name}
-                className="flex flex-col items-start gap-2"
-              >
-                <span>
-                  {product.count}
-                  {product.name}
-                </span>
-              </div>
-            ))}
+      {Object.entries(tabProducts).map(([tab, products]) => {
+        // Ürünleri filtrele, sadece count > 0 olanları tut
+        const filteredProducts = products.filter(
+          (product) => product.count > 0
+        );
+
+        // Filtrelenmiş ürünler yoksa bu kartı render etme
+        if (filteredProducts.length === 0) return null;
+
+        return (
+          <div
+            className="flex flex-col text-sm rounded-lg bg-[#FEFEFE] shadow-lg w-full items-start gap-2 p-6"
+            key={tab}
+          >
+            <h3 className="text-lg">{tab}</h3>
+            <div className="flex gap-2 text-xs">
+              {filteredProducts.map((products) => (
+                <div key={products.name}>
+                  <span>
+                    {products.count} {products.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => removeProduct(tab)}
+            >
+              Paketten Çıkar
+            </Button>
           </div>
-        ))}
-      </div>
+        );
+      })}
       <button className="bg-[#343431] w-full p-3 rounded-full text-white">
         Sepete Ekle ({totalPrice} TL)
       </button>
