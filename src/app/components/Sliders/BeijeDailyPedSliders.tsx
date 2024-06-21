@@ -1,4 +1,3 @@
-// BeijeGunlukPedSliders.js
 import CustomSlider from '../CustomSlider';
 
 export default function BeijeGunlukPedSliders() {

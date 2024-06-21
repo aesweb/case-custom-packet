@@ -1,4 +1,3 @@
-// BeijeTamponSliders.js
 import CustomSlider from '../CustomSlider';
 
 export default function BeijeTamponSliders() {

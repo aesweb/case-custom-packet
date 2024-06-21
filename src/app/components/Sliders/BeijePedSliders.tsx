@@ -1,4 +1,4 @@
-// BeijePedSliders.js
+
 import CustomSlider from '../CustomSlider';
 
 export default function BeijePedSliders() {

@@ -1,4 +1,3 @@
-// TabsComponent.js
 import { Tabs, Tab } from '@nextui-org/react';
 import BeijePedSliders from './Sliders/BeijePedSliders';
 import BeijeGunlukPedSliders from './Sliders/BeijeDailyPedSliders';
