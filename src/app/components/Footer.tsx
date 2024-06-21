@@ -1,3 +1,4 @@
+import { Button } from '@nextui-org/button';
 import {
   FaFacebook,
   FaInstagram,
@@ -11,26 +12,24 @@ export default function Footer() {
     <footer className="bg-[#262626] text-gray-300 px-32 py-16 gap-12 flex flex-col">
       <section className="flex gap-12 py-6">
         {/* footer left */}
-        <div className="flex flex-col gap-6 w-1/2">
+        <div className="flex flex-col gap-6 w-1/2 text-[#FFFFFFB2] font-extralight text-sm">
           <img src="footer-logo.svg" alt="Footer Logo" width={50} />
-          <div className="text-sm">
+          <p>
             Arayı açmayalım! <br /> beije’deki yeni ürün ve gelişmeleri sana
             haber verelim & aylık e-gazetemiz döngü’ye abone ol!
-          </div>
+          </p>
           <form action="" className="gap-4 flex">
             <input
               type="text"
               placeholder="e-mail adresin"
-              className="p-2 rounded-md w-2/4"
+              className="p-2 rounded-md w-2/4 bg-transparent border-1 border-white"
             />
-            <button className="bg-gray-300 text-gray-800 rounded-full p-2">
-              Gönder
-            </button>
+            <Button radius="full">Gönder</Button>
           </form>
-          <div className="text-xs">
+          <p className="text-xs">
             Abone olarak, beije KVKK ve Gizlilik Politikası'nı kabul ediyor ve
             beije'den haber almayı onaylıyorum.
-          </div>
+          </p>
         </div>
         {/* footer right */}
         <div className="flex gap-12 w-1/2">
@@ -45,14 +44,14 @@ export default function Footer() {
           />
           <FooterColumn
             title="Bağlantılar"
-            items={['blog', 'sıkça sorulan sorular', 'biz kimiz', 'quiz']}
+            items={['Blog', 'Sıkça Sorulan Sorular', 'Biz Kimiz', 'Quiz']}
           />
           <FooterSocial />
         </div>
       </section>
       <div className="flex flex-col text-sm text-gray-300 py-12">
         <hr className="border-gray-500 my-4" />
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center text-xs text-[#FFFFFFB2]  font-extralight">
           <div>2024 beije. Tum haklari saklidir.</div>
           <ul className="flex gap-10">
             <li>KVKK</li>
@@ -71,7 +70,7 @@ export default function Footer() {
 
 function FooterColumn({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6 text-sm">
       {items.map((item: string, index: number) => (
         <p key={index}>{item}</p>
       ))}
@@ -89,7 +88,7 @@ function FooterSocial() {
   ];
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6 text-sm font-light">
       {socialLinks.map((link, index) => (
         <span className="flex gap-2 items-center" key={index}>
           {link.icon}

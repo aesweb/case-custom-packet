@@ -3,7 +3,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 
 function Navbar() {
   return (
-    <header className="flex justify-center gap-24 items-center container mx-auto py-6 text-md text-gray-700">
+    <header className="flex justify-center gap-24 items-center container mx-auto py-6 text-gray-700">
       <div>
         <img src="logo.svg" alt="" />
       </div>
