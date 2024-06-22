@@ -3,7 +3,7 @@ import TabsComponent from './TabsComponent';
 
 const CustomCard = () => {
   return (
-    <div className="flex flex-col gap-12 max-w-[564px] px-6">
+    <div className="flex flex-col gap-12 md:max-w-[564px] w-full px-6">
       <div className="flex flex-col gap-8">
         <div className="flex justify-between items-center">
           <div className="text-2xl text-black font-medium">
