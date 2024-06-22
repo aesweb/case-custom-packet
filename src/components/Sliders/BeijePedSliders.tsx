@@ -1,6 +1,6 @@
 'use client';
 
-import { usePackage } from '@/app/context/PackageContext';
+import { usePackage } from '@/context/PackageContext';
 import CustomSlider from '../CustomSlider';
 
 export default function BeijePedSliders() {

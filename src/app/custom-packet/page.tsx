@@ -1,5 +1,5 @@
-import Card from '../components/Card';
-import CustomCard from '../components/CustomCard';
+import Card from '../../components/Card';
+import CustomCard from '../../components/CustomCard';
 
 export default function page() {
   return (
