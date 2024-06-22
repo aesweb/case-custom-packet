@@ -34,12 +34,12 @@ export default function Card() {
   };
 
   return (
-    <div className="flex flex-col gap-8 p-8 rounded-xl bg-white max-w-[420px]">
-      <span className="text-2xl font-medium">Özel Paketin</span>
+    <div className="flex flex-col gap-8 p-8 rounded-xl bg-white max-w-[420px] ">
+      <div className="text-2xl font-medium mb-6">Özel Paketin</div>
       <div className="flex p-3 rounded-lg bg-[#FEFEFE] w-full gap-2 shadow-lg text-gray-800 text-sm">
         <img src="repeat.svg" alt="" />2 ayda 1 gönderim
       </div>
-      <div>
+      <div className="mt-6">
         <img src="packet.webp" alt="" />
       </div>
 
@@ -52,7 +52,7 @@ export default function Card() {
 
         return (
           <div
-            className="flex flex-col text-sm rounded-lg bg-[#FEFEFE] shadow-lg w-full items-start gap-2 p-6"
+            className="flex flex-col text-sm rounded-lg bg-[#FEFEFE] shadow-lg w-full items-start gap-2 p-6 my-4"
             key={tab}
           >
             <h3 className="text-lg">{getTabTitle(tab)}</h3>
@@ -75,8 +75,8 @@ export default function Card() {
           </div>
         );
       })}
-      <button
-        className={`w-full p-3 rounded-full ${
+      <Button
+        className={`w-full p-3 rounded-full mt-12 ${
           totalPrice === 0
             ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
             : 'bg-[#343431] text-white'
@@ -84,7 +84,7 @@ export default function Card() {
         disabled={totalPrice === 0}
       >
         Sepete Ekle ({totalPrice} TL)
-      </button>
+      </Button>
     </div>
   );
 }
