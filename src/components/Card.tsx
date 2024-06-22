@@ -19,22 +19,35 @@ export default function Card() {
     }));
   };
 
+  // Tab isimlerini özelleştirmek için bir fonksiyon
+  const getTabTitle = (tabName: string) => {
+    switch (tabName) {
+      case 'beije Ped':
+        return 'Ped Paketleri';
+      case 'beije günlük ped':
+        return 'Günlük Ped Paketleri';
+      case 'beije Tampon':
+        return 'Tampon Paketleri';
+      default:
+        return tabName;
+    }
+  };
+
   return (
     <div className="flex flex-col gap-8 p-8 rounded-xl bg-white max-w-[420px]">
       <span className="text-2xl font-medium">Özel Paketin</span>
       <div className="flex p-3 rounded-lg bg-[#FEFEFE] w-full gap-2 shadow-lg text-gray-800 text-sm">
         <img src="repeat.svg" alt="" />2 ayda 1 gönderim
       </div>
-
-      <img src="packet.webp" alt="" />
+      <div>
+        <img src="packet.webp" alt="" />
+      </div>
 
       {Object.entries(tabProducts).map(([tab, products]) => {
-        // Ürünleri filtrele, sadece count > 0 olanları tut
         const filteredProducts = products.filter(
           (product) => product.count > 0
         );
 
-        // Filtrelenmiş ürünler yoksa bu kartı render etme
         if (filteredProducts.length === 0) return null;
 
         return (
@@ -42,7 +55,7 @@ export default function Card() {
             className="flex flex-col text-sm rounded-lg bg-[#FEFEFE] shadow-lg w-full items-start gap-2 p-6"
             key={tab}
           >
-            <h3 className="text-lg">{tab}</h3>
+            <h3 className="text-lg">{getTabTitle(tab)}</h3>
             <div className="flex gap-2 text-xs">
               {filteredProducts.map((products) => (
                 <div key={products.name}>
