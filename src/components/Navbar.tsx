@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <Navbar className="bg-[#F5F5F5]">
-      <NavbarBrand>
+      <NavbarBrand className="">
         <img src="/logo.svg" alt="" />
       </NavbarBrand>
       <NavbarContent className="hidden md:flex gap-8" justify="center">
