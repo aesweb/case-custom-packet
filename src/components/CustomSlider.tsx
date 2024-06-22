@@ -36,7 +36,7 @@ export default function CustomSlider({
       marks={marks}
       value={value}
       onChange={handleChange}
-      className="max-w-md"
+      className="w-full md:max-w-md"
     />
   );
 }
